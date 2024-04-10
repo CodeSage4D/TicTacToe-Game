@@ -1,0 +1,176 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Neon Effect */
+.neon-text {
+    color: #fff;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    text-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0, 0 0 30px #00fff0, 0 0 40px #00fff0, 0 0 50px #00fff0, 0 0 60px #00fff0, 0 0 70px #00fff0;
+}
+
+/* 3D Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00aaff;
+    color: #fff;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Animation */
+body {
+    background-color: #111;
+    overflow: hidden;
+}
+
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #ff00ff 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff00ff 20%, transparent 30%, #ff00ff 30%, transparent 40%, #ff00ff 40%, transparent 50%, #ff00ff 50%, transparent 60%, #ff00ff 60%, transparent 70%, #ff00ff 70%, transparent 80%, #ff00ff 80%, transparent 90%, #ff00ff 90%);
+    background-repeat: repeat;
+    background-size: 200% 200%;
+    animation: bg-animation 10s infinite linear;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Portrait mode */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    .app {
+        padding: 50px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .button {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+
+/* Landscape mode */
+@media screen and (max-width: 600px) and (orientation: landscape) {
+    .app {
+        padding: 30px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
+/* Portrait mode for Android */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    /* Add your specific styles for portrait mode on Android here */
+    .container {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 80px); /* Adjust grid layout for smaller screens */
+    }
+
+    .cell {
+        width: 80px; /* Adjust cell size for smaller screens */
+        height: 80px; /* Adjust cell size for smaller screens */
+    }
+}
+
+/* Styles for both landscape and portrait orientations */
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Using fractional units for responsiveness */
+    gap: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100%; /* Cells take up full width */
+    aspect-ratio: 1/1; /* Maintain aspect ratio for square cells */
+    background-color: #000; /* Black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    color: #00faff; /* Neon blue */
+}
+
+.cell:hover {
+    background-color: #000; /* Black */
+    color: #00faff; /* Neon blue */
+}
+
+/* Add this at the end of your CSS file */
+
+#winning-line {
+    position: absolute;
+    height: 10px;
+    background-color: #fff;
+    transform-origin: left center;
+    z-index: 1;
+    pointer-events: none;
+    transition: width 0.5s ease, transform 0.5s ease;
+    display: none; /* Initially hidden */
+}
+
+#winning-line.active {
+    display: block;
+}
+
+/* Adjustments for Android screens */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Neon effect */
+.neon-text {
+    color: #fff;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0, 0 0 15px #00fff0, 0 0 20px #00fff0, 0 0 25px #00fff0, 0 0 30px #00fff0, 0 0 35px #00fff0;
+}
