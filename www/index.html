@@ -97,5 +97,25 @@
     <!-- Add the JavaScript file for the Tic-Tac-Toe game -->
     <script src="js/app.js"></script>
     <script src="js/game_logic.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js"></script>
+<script>
+  // Initialize Firebase
+  var firebaseConfig = {
+  apiKey: "AIzaSyBvHUbwUoVLQzjPkS8wnmCMX_pH9_Z1Zwk",
+  authDomain: "tictactoe-420005.firebaseapp.com",
+  projectId: "tictactoe-420005",
+  storageBucket: "tictactoe-420005.appspot.com",
+  messagingSenderId: "730845100280",
+  appId: "1:730845100280:android:ec0f1e91fd3e295604230d",
+  measurementId: "" // Measurement ID is optional and might not be included in your google-services.json
+};
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
 </body>
 </html>
