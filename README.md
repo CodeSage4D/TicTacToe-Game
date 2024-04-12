@@ -2,7 +2,9 @@
 
 Welcome to Tic-Tac-Toe! This is a simple web-based implementation of the classic game where players take turns marking spaces in a 3x3 grid with their respective symbols (X or O) with the goal of getting three of their symbols in a row, column, or diagonal.
 
-![Tic-Tac-Toe Screenshot](tictactoe-screenshot.png)
+![Tic-Tac-Toe Screenshot](ss1.jpg)
+![Tic-Tac-Toe Screenshot](ss2.jpg)
+![Tic-Tac-Toe Screenshot](ss3.jpg)
 
 ## Features
 
